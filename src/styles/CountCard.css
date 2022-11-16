@@ -1,0 +1,28 @@
+.Counter-title {
+    font-weight: bold;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    font-size: 40pt;
+    transform: translate(-50%)
+}
+
+.buttons {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+
+.btn {
+    font-size: 20pt;
+    margin: 5pt;
+    height: 2em;
+    width: 2em;
+    cursor: cell;
+    text-align: center;
+    background-color: white;
+    border-radius: 500px;
+    border-color: black;
+}
