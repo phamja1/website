@@ -3,7 +3,6 @@ import '../styles/CountCard.css';
 
 function CountCard() {
     const [counter, setCounter] = useState<number>(0);
-
     const incrementCounter = () => {
         setCounter(counter + 1);
     };
@@ -12,7 +11,7 @@ function CountCard() {
         setCounter(counter - 1);
     };
     return (
-        <div className="App">
+        <>
             <div className="floating-card CountCard">
                 <div className="Counter-title">Counter</div>
                 <div style={{fontSize:'30pt'}}>{counter}</div>
@@ -20,9 +19,8 @@ function CountCard() {
                     <button onClick={decrementCounter} className="btn">-</button>
                     <button onClick={incrementCounter} className="btn">+</button>
                 </div>
-                
             </div>
-        </div>
+        </>
     );
 }
 

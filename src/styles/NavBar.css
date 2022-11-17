@@ -1,0 +1,41 @@
+.NavBar {
+    width: 100vw;
+    background-color: #00000a;
+    padding: 0;
+
+}
+
+.logoImage {
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.Navbar-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #FFFFFFFC;
+    /* border: 0.1em solid white; */
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.nav-link {
+    display: flex;
+}
+
+li {
+    justify-items: flex-end;
+}
+
