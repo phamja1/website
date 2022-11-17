@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css'
 import CountCard from './Components/CountCard';
 import NavBar from './Components/NavBar';
-import {Routes, Route, Outlet} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import Home from './Components/Home';
 
 function App() {
