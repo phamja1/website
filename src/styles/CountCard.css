@@ -20,7 +20,7 @@
     margin: 5pt;
     height: 2em;
     width: 2em;
-    cursor: cell;
+    cursor: pointer;
     text-align: center;
     background-color: white;
     border-radius: 500px;

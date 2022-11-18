@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/NavBar.css";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
+import { AiFillCaretDown } from "react-icons/ai";
 
 function NavBar() {
     return (
@@ -17,14 +18,16 @@ function NavBar() {
                     <Link to="/counter" className="link navbar-child">
                         Projects
                     </Link>
-                    <div className="dropdown navbar-child">
-                        {/* <button className="dropbtn">
+                    <div className="navbar-child dropdown ">
+                        <div className="navbar-child">
                             Dropdown
-                        </button>
+                            <AiFillCaretDown />
+                        </div>
                         <div className="dropdown-content">
-                            <a href="/counter">Counter</a>
-                        </div> */}
-                        Dropdown
+                            <Link to="/counter" className="dropdown-link link">Content1</Link>
+                            <div className="dropdown-link">Content2</div>
+                            <div className="dropdown-link">Content3</div>
+                        </div>
                     </div>
                 </div>
             </nav>
