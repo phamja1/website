@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import '../styles/CountCard.css';
+import NavBar from "./NavBar";
 
 function CountCard() {
     const [counter, setCounter] = useState<number>(0);
     const incrementCounter = () => {
-        setCounter(counter + 1);
+        setCounter((curr) => curr + 1);
     };
 
     const decrementCounter = () => {
-        setCounter(counter - 1);
+        setCounter((curr) => curr - 1);
     };
     return (
         <>
+            <NavBar />
             <div className="floating-card CountCard">
                 <div className="Counter-title">Counter</div>
                 <div style={{fontSize:'30pt'}}>{counter}</div>

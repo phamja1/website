@@ -1,8 +1,11 @@
 .NavBar {
-    width: 100vw;
     background-color: #333;
-    padding: 0;
-
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    padding: 0 0 0 16px;
+    justify-content: space-between;
 }
 
 .logoImage {
@@ -13,9 +16,7 @@
 
 .nav-links {
     list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    display: inline-flex;
 }
 
 
@@ -29,22 +30,29 @@
     align-items: center;
     height: 100%;
     color: #FFFFFFFC;
-    /* border: 0.1em solid white; */
     cursor: pointer;
-    min-width: 100px;
-    width: auto;
-    padding: 0 20px;
+    min-width: 125px;
     border-radius: 2px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    position: relative;
+
 }
 
-.nav-tag {
+.drop-btn {
+    color: #FFFFFFFC;
+    height: 100%;
+    width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-tag {
+
 }
 
 .dropdown {
-    position: relative;
     display: inline-block !important;
-    width: inherit;
 }
 
 .dropdown:hover .dropdown-content {
@@ -56,9 +64,7 @@
     position: absolute;
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    min-width: 100%;
-    z-index: 1;
-    transform: translate(-20px, 0);
+    width: 100%;
 }
 
 .navbar-child:hover {
@@ -75,4 +81,5 @@
     color: black;
     align-items: center;
     text-align: center;
+    transition-duration: 0.3s;
 }

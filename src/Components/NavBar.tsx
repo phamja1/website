@@ -7,7 +7,6 @@ import { AiFillCaretDown } from "react-icons/ai";
 function NavBar() {
     return (
         <div className="NavBar">
-            <nav className="nav-tag">
                 <a href="/">
                     <img src={logo} alt="logoImage" className="logoImage"></img>
                 </a>
@@ -18,8 +17,8 @@ function NavBar() {
                     <Link to="/counter" className="link navbar-child">
                         Projects
                     </Link>
-                    <div className="navbar-child dropdown ">
-                        <div className="navbar-child">
+                    <div className="navbar-child dropdown">
+                        <div className='drop-btn'>
                             Dropdown
                             <AiFillCaretDown />
                         </div>
@@ -30,7 +29,6 @@ function NavBar() {
                         </div>
                     </div>
                 </div>
-            </nav>
         </div>
     );
 }
