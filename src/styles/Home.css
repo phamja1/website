@@ -1,0 +1,29 @@
+.title-screen {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 0;
+}
+
+.full-screen {
+    height: 100vh;
+
+}
+
+.hidden {
+    flex-direction: column;
+    opacity: 0;
+    transform: translate(-100%);
+    transition:
+    opacity ease-in 1s 500ms,
+    transform ease-out 1s;
+;
+}
+
+.show {
+    opacity: 1;
+    transform: translate(0);
+
+}
