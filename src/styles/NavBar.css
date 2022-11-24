@@ -36,7 +36,7 @@
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
     position: relative;
-
+    padding: 0 3px;
 }
 
 .drop-btn {
@@ -47,12 +47,13 @@
     align-items: center;
     justify-content: center;
 }
-.nav-tag {
 
+.logout {
+    flex-direction: column;
 }
 
 .dropdown {
-    display: inline-block !important;
+    display: block !important;
 }
 
 .dropdown:hover .dropdown-content {
@@ -82,4 +83,14 @@
     align-items: center;
     text-align: center;
     transition-duration: 0.3s;
+}
+
+.google-login {
+    margin: 10px;
+}
+
+.logout-msg {
+    font-size: 6pt;
+    padding: 0;
+    margin: 0;
 }
