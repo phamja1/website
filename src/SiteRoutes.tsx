@@ -10,8 +10,10 @@ function SiteRoutes() {
         <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="projects" element={<ProjectPage />} />
-            <Route path="/projects/counter" element={<CountCard />} />
+            <Route path="projects">
+                <Route index element={<ProjectPage/>}/>
+                <Route path="counter" element={<CountCard />} />
+            </Route>
             <Route path="/sandbox" element={<Sandbox />} />
         </Routes>
     );

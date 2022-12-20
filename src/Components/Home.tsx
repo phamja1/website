@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useRef} from 'react'
 import useOnScreen from "../hooks/useOnScreen";
 import '../styles/Home.css'
 import NavBar from './NavBar';
@@ -8,7 +8,6 @@ function Home() {
 
     const useOnScreen2 = useOnScreen(page2)
 
-    console.log(useOnScreen2)
 
     const toggleShow = (ref: React.RefObject<HTMLElement>) => {
         const classes = ref.current!.classList
@@ -40,8 +39,6 @@ function Home() {
                     <h1>Sliding Text</h1>
                     <div>This is subtext</div>
                 </div>
-
-
             </main>
         </>
     )

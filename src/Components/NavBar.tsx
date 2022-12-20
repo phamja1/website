@@ -3,15 +3,10 @@ import "../styles/NavBar.css";
 import logo from "../logo.svg";
 import { Link } from "react-router-dom";
 import { AiFillCaretDown } from "react-icons/ai";
-import GoogleLogin, { useGoogleLogin, useGoogleLogout } from "react-google-login";
-import { clientId } from "../utils/constants";
-import { gapi } from "gapi-script";
 import useGoogle from "../hooks/useGoogle";
 
 function NavBar() {
-    const {profile, signIn, signOut, loaded} = useGoogle();
-
-    let clientId: string = import.meta.env.VITE_CLIENT_ID
+    const {profile, signIn, signOut} = useGoogle();
     return (
         <div className="NavBar">
             <a href="/">

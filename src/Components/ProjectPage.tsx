@@ -18,7 +18,7 @@ function ProjectPage() {
             <div className='project-page'>
                 <h1> Projects </h1>
                 {projects.map((project) =>
-                    <ProjectCard title={project.title} description={project.description} linkTo={project.linkTo}/>
+                    <ProjectCard key={project.title} title={project.title} description={project.description} linkTo={project.linkTo}/>
                 )}
             </div>
         </>
