@@ -3,8 +3,6 @@ import useOnScreen from "../hooks/useOnScreen";
 import '../styles/Home.css'
 import NavBar from './NavBar';
 
-// test commit
-
 function Home() {
     const page2 = useRef<HTMLDivElement>(null)
 
