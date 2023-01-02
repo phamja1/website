@@ -1,0 +1,3 @@
+CREATE TABLE `sys`.`test` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`));
