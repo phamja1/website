@@ -19,7 +19,6 @@
     transition:
     opacity ease-in 1s 500ms,
     transform ease-out 1s;
-;
 }
 
 .show {

@@ -29,6 +29,12 @@ function NavBar() {
                         >
                             Counter
                         </Link>
+                        <Link
+                            to="/projects/trivia"
+                            className="dropdown-link link"
+                        >
+                            Trivia
+                        </Link>
                         <Link className="dropdown-link link" to="/sandbox">
                             Sandbox
                         </Link>
