@@ -6,8 +6,7 @@ RUN := $(DOCKER_COMPOSE) \
 
 .PHONY: build
 build:
-	$(RUN)\ 
-	up --build --detach
+	$(RUN) up --build --detach
 
 .PHONY: stop
 stop:
