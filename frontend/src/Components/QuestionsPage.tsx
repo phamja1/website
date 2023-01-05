@@ -10,40 +10,50 @@ function QuestionsPage() {
     const {questionId} = useParams()
     const location = useLocation()
     const id = parseInt(questionId as string)
-    var correct = 0
+    var correct = location.state.correct
     const questions = location.state.questions
   return (
     <>
     <div className='title'>
         <div style={{width: '1000px'}}>
-            <h1 style={{fontSize:'50pt'}}>Question {id}</h1>
+            <div className='header'>
+                <h1 style={{fontSize:'50pt'}}>Question {id}</h1>
+                <h2>{correct}/{id - 1}</h2>
+            </div>
             <p style={{fontSize: '20pt', maxWidth: '1000px', marginBottom: '30px'}}>{he.decode(questions[id - 1].question)}</p>
-            <Answers question={questions} questionId={id} onCorrect={() => correct++} onIncorrect={() => console.log("Incorrect Answer")}/>
+            <Answers question={questions} questionId={id} correctCount={correct} onCorrect={() => console.log("Correct Answer")} onIncorrect={() => console.log("Incorrect Answer")}/>
         </div>
     </div>
     </>
   )
 }
 
-function Answers({question, questionId, onCorrect, onIncorrect}: result) {
+function Answers({question, questionId, correctCount, onCorrect, onIncorrect}: result) {
     const navigate = useNavigate()
-    const {correct_answer, incorrect_answers} = question[questionId - 1]
+    const {correct_answer, incorrect_answers, type} = question[questionId - 1]
 
     const correctChoice = Math.floor(Math.random() * (3 - 0 + 1)) + 0
 
-    const onClick = (key: number) => {
-        if (key == correctChoice) {
+    const onClick = (key: String) => {
+        if (key === correct_answer) {
             onCorrect()
+            correctCount++
         } else {
             onIncorrect()
         }
         if (questionId < question.length) {
-            navigate(`/projects/trivia/questions/${questionId + 1}`, {state: {questions: question}})
+            navigate(`/projects/trivia/questions/${questionId + 1}`, {state: {questions: question, correct: correctCount}})
         } else {
             navigate("/projects/trivia")
         }
     }
-    var answers: string[] = new Array(4);
+    var answers: string[]
+    if (type === "boolean") {
+        answers = new Array(2)
+        answers[0] = "True"
+        answers[1] = "False"
+    }
+    answers = new Array(4)
     let j = 0;
     for (let i = 0; i < answers.length; i++) {
         if (i == correctChoice) {
@@ -54,10 +64,10 @@ function Answers({question, questionId, onCorrect, onIncorrect}: result) {
     }
     return (
         <div className='answers'>
-            {answers[0] && <div className='button' onClick={()=>onClick(0)}>{he.decode(answers[0])}</div>}
-            {answers[1] && <div className='button' onClick={()=>onClick(1)}>{he.decode(answers[1])}</div>}
-            {answers[2] && <div className='button' onClick={()=>onClick(2)}>{he.decode(answers[2])}</div>}
-            {answers[3] && <div className='button' onClick={()=>onClick(3)}>{he.decode(answers[3])}</div>}
+            {answers[0] && <div className='button' onClick={()=>onClick(answers[0])}>{he.decode(answers[0])}</div>}
+            {answers[1] && <div className='button' onClick={()=>onClick(answers[1])}>{he.decode(answers[1])}</div>}
+            {answers[2] && <div className='button' onClick={()=>onClick(answers[2])}>{he.decode(answers[2])}</div>}
+            {answers[3] && <div className='button' onClick={()=>onClick(answers[3])}>{he.decode(answers[3])}</div>}
         </div>
     )
 }
@@ -65,6 +75,7 @@ function Answers({question, questionId, onCorrect, onIncorrect}: result) {
 interface result {
     question: any
     questionId: number
+    correctCount: number
     onCorrect: ()=>void
     onIncorrect: ()=>void
 }

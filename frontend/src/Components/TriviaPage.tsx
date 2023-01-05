@@ -15,7 +15,7 @@ function TriviaPage() {
 
         const data = (await axios.get("https://opentdb.com/api.php?amount=10")).data
             console.log(data)
-        navigate("questions/1", {state: {questions: data.results}})
+        navigate("questions/1", {state: {questions: data.results, correct: 0}})
     }
   return (
     <>
